@@ -26,9 +26,11 @@ systemd-libs-208-26.fc20.x86_64 is a duplicate with systemd-libs-208-22.fc20.x86
 Simple download and run:
 
 ```bash
- # ./remove-duplicated-rpms.sh
+ # ./clean-duplicated-rpms.sh
 ```
 
+# Other solutions
+I found quite few different solution to that problem. Non of them worked for me.
 
 
 

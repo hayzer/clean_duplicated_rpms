@@ -11,5 +11,8 @@ while read list; do
 		continue
 	fi
 	package=$(echo ${list}|awk -F' is a duplicate with ' '{print $2}')
-	echo yum erase -y ${package//[0-9]*:/}
+	yum erase -y ${package//[0-9]*:/}
 done < <(yum check 2>/dev/null)
+
+yum clean all
+yum update

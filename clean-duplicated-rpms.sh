@@ -7,11 +7,10 @@ if [ ${EUID} -ne 0 ]; then
 fi
 
 while read list; do
-	if ! echo "${list}" | grep -q -E '.*is a duplicate.*' > /dev/null; then
-		continue
+	if echo "${list}" | grep -q -E '.*is a duplicate.*' > /dev/null; then
+		package=$(echo ${list}|awk -F' is a duplicate with ' '{print $2}')
+		yum erase -y ${package//[0-9]*:/}
 	fi
-	package=$(echo ${list}|awk -F' is a duplicate with ' '{print $2}')
-	yum erase -y ${package//[0-9]*:/}
 done < <(yum check 2>/dev/null)
 
 yum clean all

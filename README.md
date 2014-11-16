@@ -3,7 +3,9 @@
 ## WARNING:
 This tool works for me but it may not do the same for you.
 Be aware, playing around with RPMs like this might ends up with unexpected results!
-Tested only on Fedora20.
+* Tested only on Fedora20.
+* To remove all duplicated RPMs on my system, I had to execute this tool several times. 
+
 
 ### Case: 
 If one for example stopped the periodical *yum update* in the middle, the result might be duplicated RPMs installed on the system. Both new and old version of the same RPM package.
@@ -34,9 +36,6 @@ Simple download and run:
 
 ### Other solutions
 I found quite few different solutions to that problem. Non of them worked for me.
-
-### Cavets
-To remove all duplicated RPMs on my system, I had to execute this tool several times. 
 
 
 
